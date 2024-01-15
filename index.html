@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Random portfolio - Software engineer +15 years experience</title>
+    <meta
+      name="description"
+      content="Random portfolio, Software engineer with more than 15 years of experience"
+    />
+
+    <meta property="og:title" content="Random portfolio software engineer" />
+    <meta
+      property="og:description"
+      content="Random portfolio, Software engineer with more than 15 years of experience"
+    />
+    <meta property="og:image" content="/images/Cyberpunk2077.jpg" />
+    <meta property="og:image:alt" content="Cyberpunk2077 image" />
+
+    <link rel="canonical" href="https://html-refresh-training.com" />
+    <link
+      rel="alternate"
+      href="https://html-refresh-training.com/es"
+      hreflang="es-ES"
+    />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#09f" />
+
+    <link rel="icon" type="image/png" href="/images/purple-planet.png" />
+
+    <style>
+      body {
+        background-color: #333333;
+        padding: 0.5rem 2rem;
+        color: #f0f0f0;
+        font-family: sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        text-decoration: none;
+        color: #006fff;
+        margin-right: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Random portfolio</h1>
+
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="https://twitch.tv" target="_blank" rel="noreferrer">Twitch</a>
+      </nav>
+    </header>
+
+    <dialog id="modal">
+      <h1>Did you know that you can open a modal like this?</h1>
+      <p>And it's totally native!</p>
+      <button id="hideModal">Close modal</button>
+    </dialog>
+
+    <button id="showModal">See more info</button>
+
+    <script>
+      window.showModal.addEventListener("click", () => {
+        window.modal.showModal();
+      });
+
+      window.hideModal.addEventListener("click", () => {
+        window.modal.close();
+      });
+    </script>
+
+    <main>
+      <p>
+        +15 years of experience as a <strong>Software Engineer</strong>, creator
+        and disseminator of programming information.
+      </p>
+
+      <h2 id="experience">Experience</h2>
+
+      <ul>
+        <li class="list-item">SpaceX - 2022</li>
+        <li class="list-item">Tesla - 2020</li>
+        <li class="list-item">Apple - 2015</li>
+      </ul>
+
+      <img
+        id="cyberpunk2077-image"
+        width="300"
+        height="300"
+        title="Cyberpunk2077"
+        alt="Cyberpunk2077 image"
+        src="/images/Cyberpunk2077.jpg"
+      />
+
+      <h2 id="projects">My projects</h2>
+
+      <aside>
+        <header>
+          <h3>My favorite<span>technologies</span></h3>
+        </header>
+        <ol type="1" reversed start="10">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li value="5">JavaScript</li>
+          <li>Node.js</li>
+        </ol>
+      </aside>
+
+      <button>Click here</button>
+
+      <section>
+        <article>
+          <header>
+            <h4>SpaceX Website</h4>
+            <img
+              style="width: 100%; aspect-ratio: 5120/2880"
+              loading="lazy"
+              src="/images/interstellar-black-hole.png"
+              alt="Interstellar black hole"
+            />
+          </header>
+          <p>
+            Elon Musk called me and I made this page from scratch in one
+            afternoon.
+          </p>
+          <footer>
+            <small>Technologies used: HTML, CSS, JavaScript</small>
+          </footer>
+        </article>
+
+        <article>
+          <header>
+            <h4>Corporate website</h4>
+          </header>
+          <p>
+            Development of a corporate website with a friendly and modern
+            interface.
+          </p>
+          <footer>
+            <small>Technologies used: HTML, CSS, JavaScript</small>
+          </footer>
+        </article>
+
+        <article>
+          <header>
+            <h4>Corporate website</h4>
+          </header>
+          <p>
+            Development of a corporate website with a friendly and modern
+            interface.
+          </p>
+          <footer>
+            <small>Technologies used: HTML, CSS, JavaScript</small>
+          </footer>
+        </article>
+      </section>
+
+      <section>
+        <h2>FAQ</h2>
+
+        <details open>
+          <summary>What studies do you have?</summary>
+          <p>I studied Computer Engineering at the MIT during 5 years</p>
+        </details>
+
+        <details>
+          <summary>What are your hobbies?</summary>
+          <p>I really like sports, especially football and basketball.</p>
+        </details>
+      </section>
+
+      <section>
+        <h2>Contact form</h2>
+
+        <form method="post" action="/">
+          <fieldset>
+            <legend>Personal info</legend>
+
+            <div>
+              <label
+                >Name:
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Random name"
+                  required
+                />
+              </label>
+            </div>
+
+            <label
+              >Email:
+              <input
+                type="email"
+                name="email"
+                placeholder="random@gmail.com"
+                required
+              />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Additional info</legend>
+            <div>
+              <label
+                >Phone number:
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="666999999"
+                  required
+                  pattern="[0-9]{9}"
+                />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Others</legend>
+
+            <div>
+              <label for="why">Why do you want to contact?</label>
+              <select name="why" id="why">
+                <option value="1">Work</option>
+                <option value="2">Question</option>
+                <option value="3">More info</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="terms">Do you accept the terms?</label>
+              <input type="checkbox" id="terms" name="terms" required />
+            </div>
+
+            <div>
+              <datalist id="languages">
+                <option value="JavaScript"></option>
+                <option value="Python"></option>
+                <option value="Java"></option>
+                <option value="C#"></option>
+              </datalist>
+              <label>
+                What language do you want me to help you with?
+                <input list="languages" name="languages" />
+              </label>
+            </div>
+          </fieldset>
+
+          <button>Send contact</button>
+        </form>
+      </section>
+      <br />
+
+      <section>
+        <iframe
+          src="https://www.youtube.com/embed/3nYLTiY5skU?si=bQTD6aSnJR7cIm3A"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="width: 100%; aspect-ratio: 16/9"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer>
+      Copyright ©️ 2024 - Random Portfolio
+
+      <a href="mailto:random@gmail.com">Send me an email</a>
+      <a href="tel:+34688888899">Call me ;)</a>
+      <a href="whatsapp://send?text=Hey sweetie">Whatsapp</a>
+    </footer>
+  </body>
+</html>
