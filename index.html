@@ -32,18 +32,79 @@
 
     <style>
       body {
-        background-color: #333333;
+        background-color: #333;
         padding: 0.5rem 2rem;
         color: #f0f0f0;
         font-family: sans-serif;
         font-weight: 300;
       }
 
+      /* 
+      h1 {
+        color: #09f;
+        border-width: 1px;
+        border-style: solid;
+        border-color: currentColor;
+      } 
+      */
+
       a {
         text-decoration: none;
         color: #006fff;
         margin-right: 1rem;
       }
+
+      a:hover {
+        color: #4696ff;
+        outline: 1px solid #4696ff; /* Differentiate from border */
+      }
+
+      a:active {
+        outline-width: 3px;
+      }
+
+      li:first-child {
+        color: #ff762c;
+      }
+
+      li:last-child {
+        color: greenyellow;
+      }
+
+      /* 
+      .link {
+        color: red;
+      } 
+      */
+
+      #showModal {
+        background: #09f;
+        color: #f0f0f0;
+        border: 0;
+        padding: 0.4rem;
+      }
+
+      /* NOTES
+
+        selector {
+          property: value; <-- declaration
+        } 
+
+        Special inheritance values: inherit, initial, unset, revert
+
+        Operators of interest to refer to elements:
+          >   For direct child
+          ~   For following sibling elements
+          +   For just the next one
+        
+        Specifity levels (X, Y, Z):
+          IDs >>> Classes, attributes and psudo-classes >>> Elements and pseudo-elements
+
+        !important <-- Important acts above specification levels but there may still be conflicts. Use as little as possible
+
+        box-sizing: border-box <-- Margin and padding are incorporated into the size of the box
+        box-sizing: content-box <-- As default
+      */
     </style>
   </head>
 
@@ -52,9 +113,15 @@
       <h1>Random portfolio</h1>
 
       <nav>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="https://twitch.tv" target="_blank" rel="noreferrer">Twitch</a>
+        <a class="link" href="#experience">Experience</a>
+        <a class="link" href="#projects">Projects</a>
+        <a
+          class="link"
+          href="https://twitch.tv"
+          target="_blank"
+          rel="noreferrer"
+          >Twitch</a
+        >
       </nav>
     </header>
 
@@ -103,7 +170,7 @@
 
       <aside>
         <header>
-          <h3>My favorite<span>technologies</span></h3>
+          <h3>My favorite <span>technologies</span></h3>
         </header>
         <ol type="1" reversed start="10">
           <li>HTML</li>
