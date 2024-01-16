@@ -1,0 +1,112 @@
+/* NOTES
+
+CSS is a declarative language for designing web pages
+
+  BASIC
+
+    selector {
+      property: value;  <-- declaration
+    } 
+
+    Special inheritance values: inherit, initial, unset, revert
+
+    Operators of interest to refer to elements:
+      >   For direct child
+      ~   For following sibling elements
+      +   For just the next one
+    
+    Specifity levels (X, Y, Z):
+      IDs >>> Classes, attributes and psudo-classes >>> Elements and pseudo-elements
+
+    !important  <-- Important acts above specification levels but there may still be conflicts. Use as little as possible
+
+    box-sizing: content-box   <-- Default
+    box-sizing: border-box    <-- Margin and padding are incorporated into the size of the box
+
+    overflow: visible   <-- Default
+    overflow: hidden / scroll / auto
+
+    text-overflow: clip       <-- Default
+    text-overflow: ellipsis   <-- Adds ellipses to overflowing text
+
+    position: static    <-- Default
+    position: absolute  <-- We can determine the position coordinates of the element within the document
+    position: relative  <-- Sets a reference to the parent element so that its children can be positioned absolutely within it
+    position: fixed     <-- We can determine the position coordinates of the element within the viewport
+    position: sticky    <-- It moves with the scroll but stays inside its parent element
+
+    selector {
+      inset: 0;
+      margin: auto;   <-- To center elements. Not recommended
+    }
+
+    z-index   <-- Works within a stacking context
+
+  
+  FLEXBOX
+
+    .parent {
+      display: flex;                  <-- Flexible container, allows us to have the children aligned in a more efficient 
+                                          way both horizontally and vertically even having unknown or dynamic sizes
+      flex-direction: row;            <-- Default
+      flex-direction: column;         <-- Flex is unidirectional
+      flex-direction: row-reverse;
+      flex-direction: column-reverse;
+
+      flex-direction: row;
+      direction: rtl;                 <-- Right to left
+      writing-mode: vertical-lr;      <-- Vertical left-right
+
+      flex-wrap: nowrap;    <-- Default - If there is not enough space in the container, this makes it fit the contents
+      flex-wrap: wrap;      <-- Gives the possibility that if the content does not fit in its container, it makes a line break
+
+      flex-flow: row nowrap;    <-- Abbreviated joint form
+
+      DISTRIBUTION ON THE MAIN AXIS
+
+        justify-content: start    <-- Default
+        justify-content: center / end / space-between / space-evenly / space-around 
+
+      CROSS-AXLE DISTRIBUTION
+
+        align-items: center;      <-- Items are aligned on the cross axis
+        align-content: center;    <-- Aligns content on cross axis
+        align-self: flex-start;   <-- Only the referenced element itself is aligned regardless of the properties of its parent
+
+      MORE USED --> justify-content & align-items
+
+      gap: 10px;  <-- Adds an amount of space between elements
+    }
+
+    .child {
+      flex: initial;      <-- Default values
+        flex-grow: 0;         <-- Default - Elements do NOT grow
+        flex-shrink: 1;       <-- Default - Elements can shrink to a size smaller than their flex-basis
+        flex-basis: auto;     <-- Default - Elements have a base size in auto
+
+      flex: auto;         <-- Content will automatically fit into the container
+        flex-grow: 1;         
+        flex-shrink: 1;       
+        flex-basis: auto;
+
+      flex: 1;            <-- All contained elements will have the same size
+        flex-grow: 1;         
+        flex-shrink: 1;       
+        flex-basis: 0;
+    }
+
+    .child:first-child {
+      flex: 4;            <-- With the flex property: 1, it will take x4 of the size
+      order: 3;           <-- Changes the order in which the elements are seen
+    }
+
+    .child:nth-child(2) {
+      flex: 2;            <-- With the flex property: 1, it will take x2 of the size
+      order: 1;
+    }
+
+    .child:last-child {
+      flex: 1;            <-- Default - With the flex property: 1, it will take x1 of the size
+      order: 3;
+    }
+*/
