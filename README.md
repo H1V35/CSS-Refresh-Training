@@ -15,3 +15,11 @@
 [![Alt text](https://img.youtube.com/vi/PSwlAuRbv_A/0.jpg)](https://www.youtube.com/watch?v=PSwlAuRbv_A)
 
 ¡Guía de CSS Flexbox para aprender de forma sencilla!
+
+## ✅ Day 3 - CSS Grid
+
+- Video reference:
+
+[![Alt text](https://img.youtube.com/vi/iTjkiI8QQsM/0.jpg)](https://www.youtube.com/watch?v=iTjkiI8QQsM)
+
+Aprende CSS Grid MUY FÁCIL con ejercicios
