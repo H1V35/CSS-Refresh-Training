@@ -241,4 +241,319 @@ CSS is a declarative language for designing web pages
         "header header ."     <-- Dot is used to define an empty space
         "sidebar content content"
         "footer footer footer";
+
+
+  TRANSITIONS & ANIMATIONS
+
+    TRANSITIONS - When we have two states we can make a transition between them
+
+
+    BASIC Example
+
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+      }
+
+      .pulser {           <-- Initial state
+        width: 50px;
+        height: 50px;
+        background: #09f;
+        border-radius: 50%;
+        position: relative;
+
+        transition-duration: 300ms;      <-- Can be seconds (s) or milliseconds (ms) - Final state
+
+        transition-property: all;     <-- Default
+        transition-property: background, scale;
+
+        transition-timing-function: linear;   <-- Default
+        transition-timing-function: ease-in / ease-out / ease-in-out / ease;
+
+        transition-timing-function: steps(50);
+        transition-timing-function: cubic-bezier(x1 y1, x2 y2);   <-- We can use development tools to make custom functions
+
+        transition-delay: 0;    <-- Default
+      }
+
+      .pulser:hover {     <-- Hover state
+        scale: 2;
+        background: purple;
+        box-shadow: 0 0 10px purple;
+
+        transition-duration: 500ms;      <-- First animation
+      }
+
+
+    DELAY Example
+
+      <section>
+        Hover to see all elements
+        <div class="pulser"></div>
+        <div class="pulser"></div>
+        <div class="pulser"></div>
+      </section>
+
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+      }
+
+      section {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pulser {
+        width: 50px;
+        height: 50px;
+        background: #09f;
+        border-radius: 50%;
+        position: relative;
+
+        transition-duration: 2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 1s;
+
+        opacity: 0;
+      }
+
+      .pulser:hover {
+        opacity: 1;
+      }
+
+      .pulser:first-child {
+        transition-delay: 0s;
+      }
+
+      .pulser:nth-child(2) {
+        transition-delay: 300s;
+      }
+
+      .pulser:nth-child(3) {
+        transition-delay: 600s;
+      }
+
+
+    SHORTCUTS
+
+      transition: background 300ms linear 2s;   <-- property / duration / function / delay
+
+      transition:
+        background 300ms linear,
+        scale 500ms ease-in-out,
+        box-shadow 1s ease;       <-- We can transition different properties
+
+
+    You can animate almost everything with transitions except what does not have intermediate states
+
+    ACCESSIBILITY
+
+      @media (prefers-reduced-motion: reduce) {
+        .pulser {
+          transition: none;     <-- To disable animations based on user preferences
+        }
+      }
+  
+
+    ANIMATIONS - Allows us to animate elements without having to interact with them
+
+    BASIC Example
+
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+      }
+
+      .pulser {           <-- Initial state
+        width: 50px;
+        height: 50px;
+        background: #09f;
+        border-radius: 50%;
+        position: relative;
+
+        animation-name: move;
+        animation-duration: 4s;
+      }
+
+      @keyframes move {
+        from {  <-- from can also be 0% / 0s
+          transform: translateY(0px);
+        }
+        
+        to {    <-- to can also be 50% / 4s
+          transform: translateY(100px);
+        }
+      }
+
+
+    PULSE Example
+
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+      }
+
+      .pulser {
+        width: 50px;
+        height: 50px;
+        background: #09f;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .pulser::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #09f;
+        border-radius: 50%;
+        z-index: -1;
+
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-timing-function: ease-in-out;
+
+        animation-iteration-count: 5;         <-- Number of times the animation repeats
+        animation-iteration-count: infinite;  <-- Infinite times
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 0;
+        }
+
+        50% {
+          scale: 2;
+          opacity: .4;
+        }
+
+        100% {
+          opacity: .6;
+        }
+      }
+
+    NOTES
+
+      animation-direction: reverse;     <-- Change the direction of the animation to: from 'to' to 'from'
+      animation-direction: alternate;   <-- When the animation ends it makes it repeat in the opposite direction
+      animation-direction: normal / alternate-reverse;
+
+      animation-play-state: paused;     <-- To pause animations
+
+      animation-fill-mode: both;        <-- Normally used - Indicates how the element should behave outside of the animation
+      animation-fill-mode: forwards;    <-- When the animation ends, the element stays in the final state
+
+      SHORTCUT
+
+        animation: pulse 2s ease-in-out 2s infinite alternate both;   
+          <-- name / duration / function / delay / count / direction / fill-mode
+      
+        Example:
+
+          animation:
+            move 2s steps(10) both,
+            enlarge 1s linear 2s both;
+
+      POLYFILL - It is js that is responsible for loading native functions that are not yet supported by all web browsers
+      
+      
+    SCROLL ANIMATIONS
+
+      SCROLL PROGRESS Example
+
+        #progress {
+          position: fixed;
+          top: 0;
+          width: 0%;
+          background: red;
+          height: 1em;
+
+          animation: progress-grow auto linear;
+          animation-timeline: scroll(root block);   <-- According to the element we want to see the scroll, in this case, the root
+                                                    <-- Second argument, vertical or horizontal, block as default
+        }
+
+        @keyframes progress-grow {
+          from { width: 0% }
+          to { width: 100% }
+        }
+
+      
+      SCROLL ANIMATIONS Example
+
+        body {
+          background-color: black;
+          margin: 0;
+          font-family: sans-serif;
+          padding-bottom: 100px;
+        }
+
+        section {
+          columns: 2;
+          padding: 16px 32px;
+          column-gap: 32px;
+        }
+
+        section img {
+          border-radius: 4px;
+          width: 100%;
+          height: auto;
+          margin-bottom: 32px;
+
+          animation: reveal linear both;
+          animation-timeline: view();             <-- Timeline based on viewport
+          animation-range: entry 20% cover 40%;   <-- Animation starts when 20% of the element enters the viewport and 
+                                                      ends when it reaches 30%
+        }
+
+        h1 {
+          color: white;
+          text-align: center;
+          padding: 16px;
+          margin: 0;
+          width: 100%;
+          position: sticky;
+          top: 0;
+          left: 0;
+          z-index: 1;
+
+          animation: enhance-header linear both;
+          animation-timeline: scroll(root block);
+          animation-range: 0 100px;     <-- Range up to which the animation reaches
+        }
+
+        @keyframes enhance-header {
+          top {
+            background: rgba(255, 255, 255, .4);
+            backdrop-filter: blur(5px);
+            font-size: 18px;
+            color: black;
+          }
+        }
+
+        @keyframes reveal {
+          from {
+            opacity: 0;
+            translate: 0 100px;
+            scale: .5;
+          }
+
+          to {
+            opacity: 1;
+            translate: 0 0;
+            scale: 1;
+          }
+        }
+
 */

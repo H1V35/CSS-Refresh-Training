@@ -23,3 +23,11 @@
 [![Alt text](https://img.youtube.com/vi/iTjkiI8QQsM/0.jpg)](https://www.youtube.com/watch?v=iTjkiI8QQsM)
 
 Aprende CSS Grid MUY FÁCIL con ejercicios
+
+## ✅ Day 4 - CSS Animations
+
+- Video reference:
+
+[![Alt text](https://img.youtube.com/vi/RwjgfNX41TE/0.jpg)](https://www.youtube.com/watch?v=RwjgfNX41TE)
+
+Aprende Animaciones con CSS y Scroll Animations sin JavaScript
