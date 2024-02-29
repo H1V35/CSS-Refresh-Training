@@ -242,6 +242,14 @@ CSS is a declarative language for designing web pages
         "sidebar content content"
         "footer footer footer";
 
+    RESPONSIVE GRID EXAMPLE:
+
+      .container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr);
+        gap: 10px;
+      }
 
   TRANSITIONS & ANIMATIONS
 
